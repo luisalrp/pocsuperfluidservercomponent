@@ -42,9 +42,13 @@ const FlowRateComponent = () => {
             const formData = new FormData();
             formData.append("userId", userId);
             const res = await getFlowRateServerSide(formData);
-            if (res && res.flowRate) {
+            // if (res && res.flowRate) {
+            //     console.debug('Setting serverside FlowRate...');
+            //     setServerFlowRate(res.flowRate);
+            // }
+            if (res) {
                 console.debug('Setting serverside FlowRate...');
-                setServerFlowRate(res.flowRate);
+                setServerFlowRate(res);
             }
         }
     };
